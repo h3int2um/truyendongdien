@@ -1,0 +1,318 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[utf8]{vietnam} %Bien dich duoc tieng Viet
+\usepackage{amsmath,amsfonts,amssymb} %Font toan
+\usepackage{type1cm}
+\usepackage{graphicx}
+\graphicspath{ {images/} }
+\usepackage[unicode]{hyperref} %Tu dong tao bookmark
+\usepackage{indentfirst} %Thut vao dau dong o tat ca cac doan
+\usepackage{listings} %Dinh dang code
+\usepackage{color} %Mau sac
+\usepackage[left=2.5cm,right=2.5cm,top=2cm,bottom=2cm]{geometry} %Canh lề trái - phải - trên - dưới cho tài liệu
+\usepackage{enumerate}
+\usepackage{circuitikz}
+\usepackage{hyperref}
+%\hypersetup{
+%    colorlinks=true,
+%    linkcolor=black,%blue,
+%    filecolor=magenta,      
+%    urlcolor=cyan,
+%}
+\begin{document}
+%\pagenumbering{gobble}
+\pagenumbering{gobble}
+\title{\textbf{\textit{Bài tập Truyền động điện}}}
+\author{\textit{Tác giả:} Nguyễn Văn Nhờ \vspace{.5cm} \\ \textit{SVTH:} Thi Minh Nhựt}
+\date{\textit{Thời gian:} \today}
+\maketitle
+
+\tableofcontents
+\everymath{\displaystyle}
+\newcommand{\vitalic}[1]{#1_\text{\textit{đm}}}
+\newcommand{\vqitalic}[1]{#1_\text{\textit{uđm}}}
+\newcommand{\unit}[1]{~#1}
+\section*{Tài liệu tham khảo}
+%\addcontentsline{toc}{section}{\textbf{Tài liệu tham khảo}}
+\begin{itemize}
+\item Nguyễn Văn Nhờ, \emph{Bài tập Truyền động điện}.
+\begin{center}
+\href{http://www4.hcmut.edu.vn/~nvnho/download.htm}{\url{http://www4.hcmut.edu.vn/~nvnho/download.htm}}
+\end{center}
+\end{itemize}
+\newpage
+\pagenumbering{arabic}
+\setcounter{page}{1}
+\section{Điều khiển động cơ không đồng bộ}
+\subsection{Phương pháp điện trở phụ}
+\subsubsection{Bài tập 1}
+\subparagraph{Đề bài} Cho động cơ không đồng bộ ba pha rotor dây quấn có các thông số như sau: $U = 380 \unit{V}, f = 50 \unit{Hz}, R_s = R_{r^ \prime}  = 1 \unit{\Omega}, X_s = X_{r^ \prime}  = 2.5 \unit{\Omega}, p = 3, \vitalic{n} = 920\unit{rpm}$. Tỷ số vòng dây stator trên rotor bằng $3.5$.
+\begin{enumerate}[a.]
+\item \label{item: bt1-a} Điều khiển bằng điện trở phụ rotor dùng contactor. Xác định điện trở phụ sao cho động cơ khởi động bằng moment cực đại.
+\item Nếu moment tải bằng định mức, xác định vận tốc của động cơ.
+\item \label{item: bt1-c} Giả sử điều khiển điện trở phụ bằng mạch bán dẫn. Tính toán điện trở phụ sao cho đạt cùng kết quả như câu \ref{item: bt1-a}. Trong trường hợp đó xác định phạm vi điều khiển vận tốc động cơ.
+\item Điều khiển động cơ phối hợp với điện trở phụ và điện áp stator. Xác định điện áp stator để động cơ chạy ở vận tốc $ \dfrac{1}{10}$ vận tốc định mức.
+\item Điều khiển quá trình tăng tốc của động cơ sao cho moment tăng tốc bằng moment cực đại.
+\item Nếu điện trở phụ có giá trị bằng $2$ giá trị xác định ở câu \ref{item: bt1-c}. Xác định tỷ số $\gamma$ để động cơ khởi động bằng moment cực đại. Xác định phạm vi điều khiển vận tốc của động cơ khi moment tải bằng moment định mức.
+\end{enumerate}
+\subsubsection{Bài tập 2}
+%http://www4.hcmut.edu.vn/~nvnho/Download/EXAM_ED/TDD%203.pdf
+\subparagraph{Đề bài}
+Cho động cơ không đồng bộ ba pha rotor lồng sóc, stator đấu dạng $Y$ với các tham số cho như sau: $$U = 380 \unit{V}, f = 50 \unit{Hz}, R_s = R_{r^ \prime}  = 1 \unit{\Omega}, X_s = X_{r^ \prime}  = 2.5 \unit{\Omega}, p = 3, \vitalic{n} = 900 \unit{rpm}$$
+\begin{enumerate}[a.]
+\item Tính dòng khởi động trực tiếp và moment khởi động.
+\item Tính dòng qua rotor và moment cơ ở chế độ định mức.
+\item Nếu sử dụng máy biến áp tự ngẫu để khởi động $Y$ cho dòng khởi động qua nguồn lưới giảm đi $0.5$ lần so với khởi động trực tiếp. Xác định tỷ số máy biến áp và tính moment khởi động khi đó.
+\item Nếu thực hiện khởi động động cơ bằng nguồn điện xoay chiều ba pha với trị hiệu dụng pha bằng $40 \unit{V}$, tần số $10 \unit{Hz}$. Tính dòng khởi động và moment khởi động.
+\item Giả sử khởi động động cơ bằng biện pháp giảm điện áp stator.
+\begin{enumerate}[i.]
+\item Xác định độ lớn nguồn cần cấp trên stator để dòng khởi động bằng $2$ lần dòng định mức.
+\item Moment khởi động lúc đó bằng bao nhiêu.
+\end{enumerate}
+\item Động cơ được cấp nguồn định mức đang chạy không tải thì bị hãm ngược.
+\begin{enumerate}[i.]
+\item Tính dòng hãm ngược và moment hãm ngược. Khi vận tốc động cơ đạt zero thì dòng điện và moment hãm bằng bao nhiêu?
+\item Nếu sử dụng điện trở phụ lắp vào mạch stator thì cần thiết lập giá trị điện trở là bao nhiêu để dòng hãm ngược có giá trị bằng dòng định mức.
+\item Trong trường hợp stator động cơ được nuôi bởi bộ biến đổi điện áp xoay chiều bán dẫn, xác định độ lớn điện áp mà bộ biến đổi điện áp cần thiết lập để dòng hãm giảm bằng dòng định mức.
+\end{enumerate}
+\item Thực hiện hãm động năng khi động cơ đang chạy ở vận tốc định mức bằng dòng điện một chiều. Giả thiết các cuộn stator đấu theo hình \ref{Fig:bt-MCL-1}, \ref{Fig:bt-MCL-2}, \ref{Fig:bt-MCL-3}. Yêu cầu moment hãm bằng $\dfrac{1}{4}$ moment định mức.
+\begin{enumerate}[i.]
+\item Tính toán góc kích của bộ chỉnh lưu theo sơ đồ hình \ref{Fig:bt-MCL-1}:
+\begin{figure}[!h]
+\begin{center}
+\begin{circuitikz}
+\draw 
+	(0,0) to [short,*-] (6,0)
+	to [L,*-*] (7.732,1)
+	to [L,*-*] (9.464,0)
+	(7.732,1) to [L,*-*] (7.732,3)
+	(3.5,3) to [short,*-,i_= $i_d$] (7.732,3)
+	(3.5,0) to [D*,*-*,l_= $D$] (3.5,3)
+	(0,3) to [Ty,*-*, l_ = $SCR$] (3.5,3)
+	(6,0) to [open,l_= $Stator$] (9.464,0)
+	(0,0) to [open,l_ = $220V;50Hz$] (0,3)
+	(5.3,0) to [open, v^<= $u_d$] (5.3,3)
+	;
+\end{circuitikz}
+\end{center}
+\caption{Sơ đồ mạch chỉnh lưu 1}\label{Fig:bt-MCL-1}
+\end{figure}
+\item Tính toán giá trị điện trở phụ trong sơ đồ hình \ref{Fig:bt-MCL-2}:
+\begin{figure}[!h]
+\begin{center}
+\begin{circuitikz}
+\draw 
+	(0,0) to [short,*-] (6,0)
+	to [L,*-*] (7.732,1)
+	to [L,*-*] (9.464,0)
+	(7.732,1) to [L,*-*] (7.732,3)
+	(3.5,3) to [R,*-,l_ = $R$, i_= $i_d$] (7.732,3)
+	(3.5,0) to [D*,*-*,l_= $D$] (3.5,3)
+	(0,3) to [Ty,*-*, l_ = $SCR$] (3.5,3)
+	(6,0) to [open,l_= $Stator$] (9.464,0)
+	(0,0) to [open,l_ = $220V;50Hz$] (0,3)
+	(5.3,0) to [open, v^<= $u_d$] (5.3,3)
+	;
+\end{circuitikz}
+\end{center}
+\caption{Sơ đồ mạch chỉnh lưu 2}\label{Fig:bt-MCL-2}
+\end{figure}
+\item Tính toán tỉ số máy biến áp theo sơ đồ hình \ref{Fig:bt-MCL-3}. Cho $X_m = 50 \unit{\Omega}$.
+\begin{figure}[h!]
+\begin{center}
+\begin{circuitikz}
+	\draw (0,0)
+	    %Ap nguon
+		to [open, l_ = $220V;50Hz$]  (0,2.5)
+		
+		%So cap cua may bien ap
+		to [short,*-] (3,2.5)
+		to [L] (3,0)
+		to [short,-*] (0,0)
+		
+		%Thu cap cua may bien ap
+		to [open] (4,0)
+		to [L] (4,2.5)
+		to [short] (4,2.5)
+		
+		%Phan mach tu
+		to [open] (3.4,0.7) to (3.4,1.7)
+		to [open] (3.6,0.7) to (3.6,1.7)
+		
+		%Nhanh 1
+	    (4,2.5) to [short,-*] (7,2.5)
+	    to [D*, l_ = $D_1$] (7,4)
+	    (4,0) to [short] (7,0)
+	    (7,-1.5) to [D*, l_ = $D_4$] (7,0)
+	    to [short] (7,2.5)
+	    
+	    %Nhanh 2
+	    (7,-1.5) to [short] (9,-1.5)
+	    to [D*, l_ = $D_2$] (9,0)
+	    to [short] (9,2.5)
+	    to [D*, l_ = $D_3$] (9,4)
+	    
+	    %Noi 2 nhanh
+	    (9,0) to [short,*-] (7,0)
+	    (9,4) to [short] (7,4)
+	    
+	    %Mach stator
+	    (9,-1.5) to [short] (10,-1.5)
+	    to [L,*-*] (11.732, 1) 
+	    to [L,*-*] (13.464,-1.5)
+	    (11.732, 1)  to [L,*-*] (11.732, 4)
+	    
+	    (9,4) to [short, i_ = $i_d$] (11.732, 4)
+	    
+	    (10,4) to [open,v^>=$u_d$] (10,-1.5)
+	    
+	    (13.464,-1.5) to [open,l_ = $Stator$] (10, -1.5)
+;
+\end{circuitikz}
+\end{center}
+\caption{Sơ đồ mạch chỉnh lưu 3}\label{Fig:bt-MCL-3}
+\end{figure}
+\end{enumerate}
+\item Thực hiện hãm tái sinh khi động cơ đang chạy ở vận tốc định mức bằng phương pháp giảm tần số nguồn. Tính moment và dòng điện hãm tái sinh, cho biết tần số và trị hiệu dụng áp nguồn được thiết lập bằng $40 \unit{Hz}$ và $190 \unit{V}$.
+\end{enumerate}
+\subsection{Phương pháp mạch nối tầng}
+\subparagraph{Đề bài} Cho động cơ không đồng bộ ba pha rotor dây quấn có các thông số như sau: $$U = 380 \unit{V}, f = 50 \unit{Hz}, R_s = R_{r^ \prime}  = 1 \unit{\Omega}, X_s = X_{r^ \prime}  = 2.5 \unit{\Omega}, p = 3, \vitalic{n} = 920\unit{rpm}$$
+
+Tỷ số vòng dây stator trên rotor bằng $3.5$. Động cơ được điều khiển bằng cách thay đổi công suất trượt rotor bằng cấu trúc mạng nối tầng bao gồm bộ chỉnh lưu diode cầu ba pha mắc vào rotor. Ngõ ra của bộ chỉnh lưu được mắc nối tiếp với cuộn kháng lọc rất lớn làm nguồn dòng cho bộ chỉnh lưu $SCR$, làm việc ở chế độ nghịch lưu. Bộ chỉnh lưu $SCR$ được mắc vào lưới nguồn qua máy biến thế có tỷ số vòng dây sơ cấp và thứ cấp làm $m$ (thứ cấp mắc vào bộ chỉnh lưu $SCR$). Điện trở của cuộn kháng lọc bằng $0.01 \unit{\Omega}$. Giả sử bỏ qua tác dụng của sóng hài dòng điện.
+\begin{enumerate}[a.]
+\item Cho biết phạm vi điều khiển vận tốc động cơ từ $0.5 n_s \leq n \leq n_s$.
+\item Xác định góc kích của bộ chỉnh lưu để động cơ có thể chạy ở vận tốc định mức và mang tải moment định mức.
+\item Nếu giá trị góc kích $\alpha = 100^0$, moment tải bằng $0.5 \vitalic{M}$, xác định vận tốc động cơ?
+\item Khi khởi động động cơ dùng cấu trúc mạch cascade trên, dòng khởi động qua mạch rotor có thể đạt giá trị tối thiểu bằng bao nhiêu? Tính moment khởi động tương ứng? 
+\end{enumerate}
+\section{Điều khiển động cơ một chiều}
+\paragraph{Đề bài} Cho động cơ một chiều kích từ độc lập với các tham số sau: $$\vqitalic{U} = 440 \unit{V}, \vqitalic{I} = 90 \unit{A}, \vitalic{n} = 565 \unit{rpm}, \vqitalic{R} = 0.16 \unit{\Omega}$$
+
+Vận tốc động cơ được điều khiển theo phương pháp điều khiển điện áp phần ứng thông qua \textit{bộ chỉnh lưu cầu ba pha điều khiển hoàn toàn}. Vận tốc cực đại của động cơ bằng vận tốc định mức. Bộ chỉnh lưu mắc vào lưới nguồn ba pha dạng $Y$ với điện áp ba pha có trị hiệu dụng áp pha là $220 \unit{V}, 50 \unit{Hz}$.
+\begin{enumerate}[a.]
+\item Tính hằng số mạch kích từ định mức.
+\item Cho rằng động cơ cần khởi động với moment bằng $2 \vitalic{M}$, tính góc điều khiển $\alpha \unit{(rad)}$.
+\item Cho biết động cơ ở chạy chế độ định mức.
+\begin{enumerate}[i.]
+\item Xác định công suất nguồn cung cấp.
+\item Xác định hệ số công suất nguồn.
+\item Xác định dòng trung bình qua linh kiện.
+\end{enumerate}
+\item \label{item:bt-dc-1-a} Nếu thiết lập góc kích bằng $\dfrac{\pi}{4} \unit{rad}$.
+\begin{enumerate}[i.]
+\item Cho rằng động cơ chạy không tải, xác định vận tốc động cơ.
+\item Cho rằng động cơ mang tải định mức, xác định vận tốc làm việc của động cơ $(rad/s)$.
+\end{enumerate}
+\item Cho rằng động cơ đang chạy vận tốc không tải từ câu \ref{item:bt-dc-1-a} thì bị hãm bằng cách đảo chiều dòng kích từ định mức, xác định điện áp bộ chỉnh lưu để moment hãm có độ lớn bằng định mức.
+\item Nếu động cơ dùng để kéo tải thế năng bằng $\vitalic{M}$, xác định góc điều khiển bộ chỉnh lưu khi động cơ:
+\begin{enumerate}[i.]
+\item Nâng tải với vận tốc $200 \unit{rpm}$.
+\item Hạ tải với vận tốc $-200 \unit{rpm}$.
+\end{enumerate}
+\end{enumerate}
+\section{Đề thi môn Truyền động điện}
+\subsection{Khóa ngày 13/11/2005}
+\subsubsection{Bài tập 1}
+\subparagraph{Đề bài} Cho động cơ một chiều kích từ độc lập với các thông số như sau: $$\vqitalic{U} = 180 \unit{V}, \vqitalic{I} = 60 \unit{A}, \vitalic{n} = 500 \unit{rpm}, \vqitalic{R} = 0.15 \unit{\Omega}$$
+
+Vận tốc động cơ được điều khiển theo phương pháp điều khiển điện áp phần ứng thông qua \textit{bộ chỉnh lưu cầu ba pha điều khiển hoàn toàn}. Bộ chỉnh lưu được mắc vào lưới nguồn xoay chiều với với điện áp hiệu dụng pha $U = 220 \unit{V}, f = 50 \unit{Hz}$. Động cơ được kích từ định mức. Giả sử động cơ mang tải với moment bằng định mức. Phạm vi điều khiển góc kích chỉnh lưu $\alpha: 0^0 \leq \alpha \leq  180^0$. Giả thiết bỏ qua các sụt áp.
+\begin{enumerate}[a.]
+\item Tính hằng số mạch kích từ định mức và moment định mức.
+\item Tính góc kích để động cơ hoạt động ở chế độ định mức.
+\item Khi khởi động yêu cầu moment khởi động bằng $1.5 \vitalic{M}$, xác định điện áp chỉnh lưu và góc kích tương ứng để khởi động động cơ.
+\item Giả sử động cơ mang tải định mức được điều khiển giảm tốc xuống còn $\dfrac{2}{3}$ vận tốc định mức. Xác định góc kích.
+\item Nếu thực hiện hãm động cơ bằng chế độ hãm động năng khi động cơ đang chạy không tải với áp nguồn bằng $100 \unit{V}$, tính điện trở phụ lắp vào mạch để moment hãm bằng định mức với tốc độ trên.
+\end{enumerate}
+\subsubsection{Bài tập 2}
+\subparagraph{Đề bài} Cho động cơ không đồng bộ ba pha rotor lồng sóc, stator đấu $Y$ với các tham số như sau: $$ U = 380 \unit{V}, f = 50 \unit{Hz}, R_s = R_{r^ \prime}  = 1 \unit{\Omega}, X_s = X_{r^ \prime}  = 2.5 \unit{\Omega}, p = 3, \vitalic{n} = 900\unit{rpm}$$
+\begin{enumerate}[a.]
+\item Tính dòng qua rotor và moment động cơ khi khởi động trực tiếp.
+\item Giả sử điều khiển vận tốc động cơ bằng cách thay đổi điện áp stator.
+\begin{enumerate}[i.]
+\item Xác định trị hiệu dụng điện áp pha nguồn cần cấp trên cuộn stator để dòng khởi động bằng $1.5$ dòng định mức.
+\item Moment khởi động lúc đó bằng bao nhiêu.
+\end{enumerate}
+\item Nếu sử dụng bộ biến tần ba pha, điều khiển theo nguyên lý $V/f$ không đổi.
+\begin{enumerate}[i.]
+\item Hãy xác định giá trị điện áp $U$ và tần số $f$ cung cấp bởi bộ biến tần để động cơ đạt tốc độ $750 \unit{rpm}$ với moment tải bằng $0.5 \vitalic{M}$.
+\item Động cơ khởi động ở tần số $10 \unit{Hz}$. Xác định dòng khởi động và moment khởi động.
+\end{enumerate}
+\end{enumerate}
+\subsection{Khóa ngày 28/12/2005 -- Đề 1}
+\subsubsection{Bài tập 1}
+\subparagraph{Đề bài} Cho động cơ một chiều kích từ độc lập với các thông số như sau: $$\vqitalic{U} = 440 \unit{V}, \vqitalic{I} = 188 \unit{A}, \vitalic{n} = 470 \unit{rpm}, \vqitalic{R} = 0.051 \unit{\Omega}$$
+
+Vận tốc động cơ được điều khiển theo phương pháp điều khiển điện áp phần ứng thông qua \textit{bộ chỉnh lưu cầu ba pha điều khiển hoàn toàn}. Bộ chỉnh lưu được mắc vào lưới nguồn xoay chiều với với điện áp hiệu dụng pha $U = 220 \unit{V}, f = 50 \unit{Hz}$. Động cơ được kích từ định mức. Giả sử động cơ mang tải với moment bằng định mức. Phạm vi điều khiển góc kích chỉnh lưu $\alpha: 0^0 \leq \alpha \leq  180^0$. Giả thiết bỏ qua các sụt áp.
+\begin{enumerate}[a.]
+\item Tính hằng số mạch kích từ định mức và moment định mức.
+\item Động cơ chạy ở vận tốc $0.5 \vitalic{n}$ và mang tải bằng $0.5 \vitalic{M}$. Tính điện áp cần đặt lên phần ứng và góc kích của bộ chỉnh lưu. Giả sử bỏ qua tổn hao trên linh kiện, xác định hiệu suất làm việc của động cơ.
+
+Hiệu suất của động cơ: $\eta = \dfrac{P_m}{P_e}$ với $P_m, P_e$: lần lượt là công suất cơ và công suất điện.
+\item Khi khởi động yêu cầu moment khởi động bằng $0.5 \vitalic{M}$, xác định điện áp chỉnh lưu và góc kích tương ứng để khởi động động cơ.
+\item Giả sử động cơ đang chạy ở vận tốc định mức được hãm tái sinh bằng cách đảo chiều dòng kích từ. Xác định giá trị điện áp thiết lập trên phần ứng để moment hãm có độ lớn định mức.
+\item Giả sử động cơ mang tải thế năng và thực hiện hạ xuống với vận tốc $500 \unit{rpm}$ và moment tải bằng định mức. Xác định điện áp phần ứng và góc kích tương ứng.
+\end{enumerate}
+\subsubsection{Bài tập 2}
+\subparagraph{Đề bài} Cho động cơ không đồng bộ ba pha rotor lồng sóc, stator đấu $Y$ với các tham số như sau: $$ U = 380 \unit{V}, f = 50 \unit{Hz}, R_s = R_{r^ \prime}  = 0.075 \unit{\Omega}, X_s = 0.45 \unit{\Omega}, X_{r^ \prime}  = 0.55 \unit{\Omega}, p = 4, \vitalic{n} = 735\unit{rpm}$$
+\begin{enumerate}[a.]
+\item Tính dòng qua rotor và moment động cơ khi khởi động trực tiếp.
+\item Giả sử điều khiển vận tốc động cơ bằng cách thay đổi điện áp stator. Xác định moment định mức. Từ đó tính điện áp stator cần thiết lập để động cơ mang tải định mức có thể chạy ở vận tốc $\vitalic{n} = 650 \unit{rpm}$.
+\item Giả sử thực hiện hãm động năng động cơ khi đang chạy ở vận tốc định mức bằng nguồn $DC$, sử dụng hai pha $A$ và $B$ của stator, pha $C$ để hở mạch. Xác định dòng điện một chiều để moment hãm có độ lớn bằng $0.3 \vitalic{M}$ và độ lớn điện áp $DC$ cần thiết, cho biết $X_m = 80 \unit{\Omega}$.
+\item Nếu sử dụng bộ biến tần ba pha, điều khiển theo nguyên lý $V/f$ không đổi. Thiết lập điện áp và tần số điện áp ra để động cơ mang tải định mức chạy ở vận tốc  $0.5 \vitalic{n}$.
+\end{enumerate}
+\subsubsection{Bài tập 3}
+\subparagraph{Đề bài} Cho động cơ không đồng bộ ba pha rotor lồng sóc, stator đấu $Y$ với các tham số như sau: $$ U = 440 \unit{V}, f = 50 \unit{Hz}, R_s = 0.1 \unit{\Omega}, R_{r^ \prime}  = 0.08 \unit{\Omega}, X_s = 0.3 \unit{\Omega}, X_{r^ \prime}  = 0.4 \unit{\Omega}, p = 3$$
+
+Tỷ số vòng dây stator trên rotor bằng $2$. Động cơ được điều khiển bằng bộ điều khiển điện trở phụ bằng mạch bán dẫn. Bỏ qua tác dụng các sóng hài bậc cao của dòng điện. Điện trở phụ được chọn sao cho moment cực đại xuất hiện lúc khởi động $(n=0)$. Xác định giá trị thực tế của điện trở phụ.
+\subsection{Khóa ngày 28/12/2005 -- Đề 2}
+\subsubsection{Bài tập 1}
+\subparagraph{Đề bài} Cho động cơ một chiều kích từ độc lập với các thông số như sau: $$\vqitalic{U} = 440 \unit{V}, \vqitalic{I} = 340 \unit{A}, \vitalic{n} = 480 \unit{rpm}, \vqitalic{R} = 0.067 \unit{\Omega}$$
+
+Vận tốc động cơ được điều khiển theo phương pháp điều khiển điện áp phần ứng thông qua \textit{bộ chỉnh lưu cầu ba pha điều khiển hoàn toàn}. Bộ chỉnh lưu được mắc vào lưới nguồn xoay chiều với với điện áp hiệu dụng pha $U = 220 \unit{V}, f = 50 \unit{Hz}$. Động cơ được kích từ định mức. Giả sử động cơ mang tải với moment bằng định mức. Phạm vi điều khiển góc kích chỉnh lưu $\alpha: 0^0 \leq \alpha \leq  180^0$. Giả thiết bỏ qua các sụt áp.
+\begin{enumerate}[a.]
+\item Động cơ chạy ở vận tốc $0.5 \vitalic{n}$ và mang tải bằng $0.5 \vitalic{M}$. Tính điện áp cần đặt lên phần ứng và góc kích của bộ chỉnh lưu.
+\item Khi khởi động yêu cầu moment khởi động bằng $0.5 \vitalic{M}$, xác định điện áp chỉnh lưu tối thiểu và góc kích tương ứng để khởi động động cơ.
+\item Giả sử động cơ đang chạy ở vận tốc định mức được hãm tái sinh bằng cách đảo chiều dòng kích từ. Xác định giá trị điện áp thiết lập trên phần ứng để moment hãm có độ lớn định mức và góc kích tương ứng của bộ chỉnh lưu.
+\end{enumerate}
+\subsubsection{Bài tập 2}
+\subparagraph{Đề bài} Cho động cơ không đồng bộ rotor lồng sóc, stator đấu $Y$ với các tham số như sau: $$ U = 440 \unit{V}, f = 50 \unit{Hz}, R_s = R_{r^ \prime}  = 0.3 \unit{\Omega}, X_s = X_{r^ \prime}  = 1 \unit{\Omega}, p = 3, \vitalic{s} = 0.05$$
+\begin{enumerate}[a.]
+\item Tính dòng qua rotor và moment động cơ khi khởi động trực tiếp.
+\item Giả sử thực hiện hãm động năng động cơ khi đang chạy ở vận tốc định mức bằng nguồn $DC$, sử dụng hai pha $A$ và $B$ của stator, pha $C$ để hở mạch. Xác định dòng điện một chiều để moment hãm có độ lớn bằng $0.3 \vitalic{M}$ và độ lớn điện áp $DC$ cần thiết, cho biết $X_m = 80 \unit{\Omega}$.
+\item Nếu sử dụng bộ biến tần ba pha, điều khiển theo nguyên lý $V/f$ không đổi. Xác định vận tốc động cơ bằng phương pháp chính xác giải phương trình từ đặc tính cơ: xác định phương trình để giải nghiệm và
+giá trị các tham số, giải nghiệm và biện luận chọn nghiệm. Cho biết tần số nguồn cấp cho stator bằng $40 \unit{Hz}$.
+\end{enumerate}
+\subsubsection{Bài tập 3}
+\subparagraph{Đề bài} Cho động cơ không đồng bộ ba pha rotor dây quấn có stator đấu dạng $Y$ và tham số như sau: $ U = 440 \unit{V}, f = 50 \unit{Hz}, R_s = 0.1 \unit{\Omega}, R_{r^ \prime}  = 0.08 \unit{\Omega}, X_s = 0.3 \unit{\Omega}, X_{r^ \prime}  = 0.4 \unit{\Omega}, p = 3, \vitalic{n} = 970 \unit{rpm}$. Tỷ số vòng dây stator trên rotor bằng $2.5$. Động cơ được điều khiển bằng bộ điều khiển điện trở phụ bằng mạch bán dẫn (bộ biến đổi xung điện trở). Bỏ qua tác dụng các sóng hài bậc cao của dòng điện. Điện trở phụ được chọn sao cho moment cực đại xuất hiện lúc khởi động $(n=0)$. Xác định giá trị thực tế của điện trở phụ: xác định phương trình để giải nghiệm và các
+tham số, giải phương trình và biện luận nghiệm.
+\subsubsection{Bài tập 4}
+\subparagraph{Đề bài} Cho biết vector dòng điện stator và rotor trong hệ toạ độ stator $(\alpha - \beta)$ là $I_s = 150e^{j60^0} (\unit{A)}$ và $I_r = 80e^{j180^0} (\unit{A})$. Cảm kháng mạch từ chính $L_m = 100 \unit{mH}$ và cảm kháng tản stator và rotor lần lượt là $L_{s\sigma} = 15 \unit{15mH}, L_{s\sigma} = 15 \unit{mH}$.
+\begin{enumerate}[a.]
+\item Xác định vector từ thông stator trong hệ tọa độ $(\alpha - \beta)$.
+\item Cho biết động cơ được điều khiển theo phương pháp moment trực tiếp $DSC$ với các hàm so sánh từ thông và moment yêu cầu cho giá trị $C_{\phi} = C_M = -1$. Xác định và vẽ vector điện áp bộ biến tần cần tác dụng lên stator trong hệ tọa độ $(\alpha - \beta)$.
+\end{enumerate}
+\subsection{Khóa ngày 27/03/2006}
+\subsubsection{Bài tập 1}
+\subparagraph{Đề bài} Cho động cơ một chiều kích từ độc lập với các thông số như sau: $$\vqitalic{U} = 220 \unit{V}, \vqitalic{I} = 135 \unit{V}, \vitalic{n} = 630 \unit{rpm}, \vqitalic{R} = 0.1 \unit{\Omega}$$
+
+Vận tốc động cơ được điều khiển theo phương pháp điều khiển điện áp phần ứng thông qua \textit{bộ chỉnh lưu cầu ba pha điều khiển hoàn toàn}. Bộ chỉnh lưu được mắc vào lưới nguồn xoay chiều với với điện áp hiệu dụng pha $U = 220 \unit{V}, f = 50 \unit{Hz}$. Động cơ được kích từ định mức. Giả sử động cơ mang tải với moment bằng định mức. Phạm vi điều khiển góc kích chỉnh lưu $\alpha: 0^0 \leq \alpha \leq  180^0$. Giả thiết bỏ qua các sụt áp.
+\begin{enumerate}[a.]
+\item Tính hằng số mạch kích từ định mức và moment định mức.
+\item Động cơ chạy ở vận tốc $0.5 \vitalic{n}$ và mang tải bằng $0.5 \vitalic{M}$. Tính điện áp cần đặt lên phần ứng và góc kích của bộ chỉnh lưu.
+\item Khi khởi động yêu cầu moment khởi động bằng $1.5 \vitalic{M}$, xác định điện áp chỉnh lưu tối thiểu và góc kích tương ứng để khởi động động cơ.
+\item Giả sử động cơ đang chạy ở vận tốc định mức được hãm tái sinh bằng cách đảo chiều dòng kích từ. Xác định giá trị điện áp thiết lập trên phần ứng để moment hãm có độ lớn $0.5 \vitalic{M}$ và góc kích tương ứng.
+\item Giả sử động cơ mang tải thế năng và thực hiện hạ xuống với vận tốc $200 \unit{rpm}$ và moment tải bằng định mức. Xác định điện áp phần ứng và góc kích tương ứng.
+\end{enumerate}
+\subsubsection{Bài tập 2}
+\subparagraph{Đề bài} Cho động cơ không đồng bộ ba pha rotor lồng sóc, stator đấu $Y$ với các tham số như sau: $$ U = 380 \unit{V}, f = 50 \unit{Hz}, R_s = R_{r^ \prime}  = 0.2 \unit{\Omega}, X_s = X_{r^ \prime}  = 0.5 \unit{\Omega}, p = 2, \vitalic{n} = 1400\unit{rpm}$$
+\begin{enumerate}[a.]
+\item Tính dòng qua rotor và moment động cơ khi chạy ở vận tốc định mức.
+\item Tính dòng qua rotor và moment động cơ khi khởi động trực tiếp.
+\item Giả sử thực hiện hãm động năng động cơ khi đang chạy ở vận tốc định mức bằng nguồn $DC$, sử dụng hai pha $A$ và $B$ của stator, pha $C$ để hở mạch. Xác định dòng điện một chiều để moment hãm có độ lớn bằng $0.25 \vitalic{M}$ và độ lớn điện áp $DC$ cần thiết, cho biết $X_m = 50 \unit{\Omega}$.
+\item Nếu sử dụng bộ biến tần ba pha, điều khiển theo nguyên lý $V/f$ không đổi. Cho tần số ngõ ra biến tần bằng $40 \unit{Hz}$. Xác định vận tốc động cơ khi mang tải định mức.
+\end{enumerate}
+\subsubsection{Bài tập 3}
+\subparagraph{Đề bài} Cho động cơ không đồng bộ ba pha rotor lồng sóc, stator đấu $Y$ với các tham số như sau: $$ U = 380 \unit{V}, f = 50 \unit{Hz}, R_s = R_{r^ \prime}  = 0.1 \unit{\Omega}, X_s = 0.25 \unit{\Omega}, X_{r^ \prime}  = 0.4 \unit{\Omega}$$
+
+Tỷ số vòng dây stator trên rotor bằng $2$. Động cơ được điều khiển bằng bộ điều khiển điện trở phụ bằng mạch bán dẫn. Bỏ qua tác dụng các sóng hài bậc cao của dòng điện. Điện trở phụ được chọn sao cho moment cực đại xuất hiện lúc khởi động $(n=0)$. Xác định giá trị thực tế của điện trở phụ.
+\end{document}
