@@ -1,0 +1,23 @@
+\documentclass[border=12pt]{standalone}
+\usepackage[utf8]{inputenc}
+\usepackage[utf8]{vietnam} %Bien dich duoc tieng Viet
+\usepackage{amsmath,amsfonts,amssymb} %Font toan
+\usepackage{siunitx}
+\usepackage[cuteinductors,smartlabels]{circuitikz}
+\begin{document}
+\begin{circuitikz}
+    \draw (0,0) to [R,l_ = $R_s$] (2,0) to [L, l_ = $jX_s$] (4,0) to [short] (5,0) to [L, l_ = $jX_{r^{\prime}}$] (7,0) to [R, l_ = $\dfrac{R_{r^{\prime}}}{s}$] (9,0) to [short] (9.5,0) to [short] (9.5,-4) to [short,-*,] (-.5,-4);
+    
+	\draw (4.5, -4) to [short] (4.5, -3) to [L, l_ = $jX_m$] (4.5,-1);
+	
+	\draw (4.5,0) to [short, i_ = $I_m$] (4.5,-1);	
+	\draw (4.5, -1) to [short] (3.5, -1) to [R, l_ = $R_m$] (3.5,-3) to [short] (4.5,-3);
+	
+	\draw (-.5, 0) to [short,*-, i_ = $\bar{I}_s$] (0.4,0);
+   \draw (4.5, 0) to [short, i_ = $\bar{I}_{r^{\prime}}$] (5.6,0);
+    
+    \draw (0.5,-4) to [open, v^<= $\bar{U}\quad$] (0.5,0);
+    
+    \draw (7,-4) to [open, v^<= $\bar{E}\quad$] (7, 0);
+\end{circuitikz}
+\end{document}
